@@ -3,7 +3,13 @@ export const TimerStatus = (state = {timerStatus: "CLEAR"}, action) => {
     // CLEAR : no workout taking place - start button wasn't pressed, or workout ended
     // STOPPED : stopped button was pushed
     // ACTIVE : workout is active - timer is on countdown
-    if (action.type !== "CLEAR" && action.type !== "STOPPED" && action.type !== "ACTIVE"){
+    // STARTED : workout just started
+    // FINISHED: workout has finished
+    if (action.type !== "CLEAR" &&
+        action.type !== "STOPPED" &&
+        action.type !== "ACTIVE" &&
+        action.type !== "STARTED" &&
+        action.type !== "FINISHED"){
         return state
     }
 

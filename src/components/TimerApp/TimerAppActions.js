@@ -16,6 +16,24 @@ export const TimerActive = () => {
     }
 }
 
+export const WorkoutFinished = () => {
+    return {
+        type: 'WORKOUT_FINISHED'
+    }
+}
+
+export const WorkoutStarted = () => {
+    return {
+        type: 'WORKOUT_STARTED'
+    }
+}
+
+export const WorkoutNotStarted = () => {
+    return {
+        type: 'WORKOUT_NOT_STARTED'
+    }
+}
+
 export const WorkoutNone = () => {
     return {
         type: 'NONE'

@@ -8,6 +8,9 @@ import {
   TimerClear,
   TimerStopped,
   TimerActive,
+  WorkoutFinished,
+  WorkoutStarted,
+  WorkoutNotStarted,
   WorkoutNone,
   WorkoutInterval,
   WorkoutRest,
@@ -26,6 +29,7 @@ class TimerApp extends Component {
   nextRound = () => {
     if (this.props.rounds === this.props.currentRound){
       // Workout ended
+      this.props.WorkoutFinished()
       this.resetCountDown()
     } else {
       this.props.NextRound()
@@ -54,6 +58,7 @@ class TimerApp extends Component {
   startCountDown = () => {
     console.log("Countdown started")
     this.props.TimerActive()
+    this.props.WorkoutStarted()
     this.props.WorkoutInterval()
     this.props.CurrentTime(this.props.intervalTime)
     this.intervalHandle = setInterval(this.tick, this.tickTime);
@@ -132,6 +137,9 @@ const actions = {
   TimerClear,
   TimerStopped,
   TimerActive,
+  WorkoutFinished,
+  WorkoutNotStarted,
+  WorkoutStarted,
   WorkoutNone,
   WorkoutInterval,
   WorkoutRest,
