@@ -17,7 +17,7 @@ class IntervalInput extends Component {
                 plusSecond={this.props.IntervalSecPlus}
                 minusMinute={this.props.IntervalMinMinus}
                 plusMinute={this.props.IntervalMinPlus}
-                seconds={this.props.intervalTime}
+                seconds={this.props.intervalWorkoutSeconds}
                 title="Interval Time:"
             />
         )
@@ -26,7 +26,7 @@ class IntervalInput extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        intervalTime: state.ChangeIntervalTime.intervalSeconds,
+        intervalWorkoutSeconds: state.ChangeIntervalTime.intervalWorkoutSeconds,
     };
 }
 

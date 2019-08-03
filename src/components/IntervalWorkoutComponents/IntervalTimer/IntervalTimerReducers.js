@@ -1,19 +1,19 @@
-export const ChangeIntervalTime = (state = {intervalSeconds: 0}, action) => {
+export const ChangeIntervalTime = (state = {intervalWorkoutSeconds: 0}, action) => {
     switch (action.type) {
         case 'INTERVAL_MIN_PLUS':
-            return {intervalSeconds: state.intervalSeconds + 60}
+            return {intervalWorkoutSeconds: state.intervalWorkoutSeconds + 60}
         case 'INTERVAL_MIN_MINUS':
-            return {intervalSeconds: state.intervalSeconds - 60}
+            return {intervalWorkoutSeconds: state.intervalWorkoutSeconds - 60}
         case 'INTERVAL_SEC_PLUS':
-            return {intervalSeconds: state.intervalSeconds + 1}
+            return {intervalWorkoutSeconds: state.intervalWorkoutSeconds + 1}
         case 'INTERVAL_SEC_MINUS':
-            return {intervalSeconds: state.intervalSeconds - 1}
+            return {intervalWorkoutSeconds: state.intervalWorkoutSeconds - 1}
         case 'INTERVAL_SEC_CLEAR':
-            return {intervalSeconds: Math.floor(state.intervalSeconds / 60)}
+            return {intervalWorkoutSeconds: Math.floor(state.intervalWorkoutSeconds / 60)}
         case 'INTERVAL_MIN_CLEAR':
-            return {intervalSeconds: state.intervalSeconds % 60}
+            return {intervalWorkoutSeconds: state.intervalWorkoutSeconds % 60}
         case 'INTERVAL_CLEAR':
-            return {intervalSeconds: 0}
+            return {intervalWorkoutSeconds: 0}
         default:
             return state;
     }

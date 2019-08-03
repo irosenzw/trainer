@@ -6,10 +6,12 @@ import CountToNumber from '../CountToNumber/CountToNumber';
 import { StartButton } from '../../GeneralComponents/StartButton';
 import CounterRestTimer from '../CounterRestTimer/CounterRestTimer';
 import { ChangeMainPageTitle } from '../../TitleComponent/TitleComponentActions';
+import { ChangeToCountForMeWorkout } from './CountForMeActions';
 
 class CountForMe extends Component {
     componentWillMount(){
         this.props.ChangeMainPageTitle("Count For Me")
+        this.props.ChangeToCountForMeWorkout()
     }
     render(){
         return(
@@ -24,4 +26,9 @@ class CountForMe extends Component {
     }
 }
 
-export default connect(null,{ChangeMainPageTitle})(CountForMe);
+const actions = {
+    ChangeToCountForMeWorkout,
+    ChangeMainPageTitle
+}
+
+export default connect(null,actions)(CountForMe);

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import TimerInput from '../../GeneralComponents/TimerInput';
 
@@ -9,22 +9,24 @@ import {
     CounterRestSecMinus,
 } from './CounterRestTimerActions';
 
-const CounterRestInput = (props) => {
-    return(
-        <TimerInput
-            minusSecond={props.CounterRestSecMinus}
-            plusSecond={props.CounterRestSecPlus}
-            minusMinute={props.CounterRestMinMinus}
-            plusMinute={props.CounterRestMinPlus}
-            seconds={props.CounterRestTime}
-            title="Rest Time"
-        />
-    )
+class CounterRestInput extends Component {
+    render(){
+        return(
+            <TimerInput
+                minusSecond={this.props.CounterRestSecMinus}
+                plusSecond={this.props.CounterRestSecPlus}
+                minusMinute={this.props.CounterRestMinMinus}
+                plusMinute={this.props.CounterRestMinPlus}
+                seconds={this.props.CounterRestSeconds}
+                title="Rest Time"
+            />
+        )
+    }
 }
 
 const mapStateToProps = (state) => {
     return {
-        CounterRestTime: state.ChangeCounterRestTime.CounterRestSeconds
+        CounterRestSeconds: state.ChangeCounterRestTime.counterRestSeconds
     };
 }
 

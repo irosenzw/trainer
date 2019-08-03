@@ -2,7 +2,17 @@ import { combineReducers } from 'redux';
 import { IntervalRoundsCount } from '../components/IntervalWorkoutComponents/IntervalRoundsInput/IntervalRoundsInputReducers';
 import { ChangeIntervalRestTime } from '../components/IntervalWorkoutComponents/IntervalRestTimer/IntervalRestTimerReducers'
 import { ChangeIntervalTime } from '../components/IntervalWorkoutComponents/IntervalTimer/IntervalTimerReducers';
-import { TimerStatus, WorkoutStatus, RemainingSeconds, CurrentRound } from '../components/IntervalWorkoutComponents/TimerApp/TimerAppReducers';
+import {
+    TimerStatus,
+    WorkoutStatus,
+    RemainingSeconds,
+    CurrentRound,
+    WorkoutType,
+    TimerClockRounds,
+    TimerClockWorkoutSeconds,
+    TimerClockRestSeconds,
+    TimerClockSpeed,
+} from '../components/TimerClock/TimerClockReducers';
 import { MainPageTitle } from '../components/TitleComponent/TitleComponentReducers';
 import { CountTo } from '../components/CountForMeConponents/CountToNumber/CountToNumberReducers';
 import { CountSpeed } from '../components/CountForMeConponents/CountSpeed/CountSpeedReducers';
@@ -12,10 +22,15 @@ import { ChangeCounterRestTime } from '../components/CountForMeConponents/Counte
 export default combineReducers({
     ChangeIntervalTime,
     ChangeIntervalRestTime,
+    TimerClockRounds,
+    TimerClockWorkoutSeconds,
+    TimerClockRestSeconds,
+    TimerClockSpeed,
     TimerStatus,
     WorkoutStatus,
     RemainingSeconds,
     CurrentRound,
+    WorkoutType,
     IntervalRoundsCount,
     MainPageTitle,
     CountTo,
